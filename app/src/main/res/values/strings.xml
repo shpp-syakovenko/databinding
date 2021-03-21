@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Binding ViewModal</string>
+    <string name="name_label">Name:</string>
+    <string name="label_lastname">Lastname:</string>
+    <string name="like">Likes:</string>
+    <string name="like_button">Like</string>
+    <string name="list_of_employees">List of employees:</string>
+</resources>
