@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.databinding.BindingAdapter
 import androidx.databinding.BindingConversion
+import androidx.lifecycle.LiveData
 import com.example.bindingviewmodal.data.entity.Employee
 import com.squareup.picasso.Picasso
 import java.lang.StringBuilder
@@ -27,10 +28,13 @@ fun setProgress(progressBar: ProgressBar, likes: Int, max: Int) {
 
 
 @BindingConversion
-fun convertListEmployees(list:List<Employee>):String{
+fun convertListEmployees(list: LiveData<List<Employee>>):String{
     val result = StringBuilder()
-    for (v in list){
-        result.append("${v.name}, ")
+    list.value?.let {
+        for (v in it){
+            result.append("${v.name}, ")
+        }
+        return result.toString()
     }
-    return result.toString()
+    return "Not employees!!!"
 }
