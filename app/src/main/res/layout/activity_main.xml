@@ -4,140 +4,171 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="viewmodel" type="com.example.bindingviewmodal.ui.MainViewModal" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.bindingviewmodal.ui.MainViewModal" />
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.MainActivity">
+        android:layout_height="wrap_content"
+        android:scrollbarDefaultDelayBeforeFade="450">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineHelp"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+            tools:context=".ui.MainActivity">
 
-        <TextView
-            android:id="@+id/tvLabelName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="@string/name_label"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
 
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="@{viewmodel.name}"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLabelName"
-            tools:text="name" />
+            <TextView
+                android:id="@+id/tvLabelName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/name_label"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvLabelLastName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="@string/label_lastname"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{viewmodel.name}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelName"
+                tools:text="name" />
 
-        <TextView
-            android:id="@+id/tvLastName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="@{viewmodel.lastName}"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLabelLastName"
-            tools:text="lastName" />
+            <TextView
+                android:id="@+id/tvLabelLastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/label_lastname"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
-        <TextView
-            android:id="@+id/tvLabelLike"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/like"
-            android:padding="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guidelineHelp" />
+            <TextView
+                android:id="@+id/tvLastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{viewmodel.lastName}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelLastName"
+                tools:text="lastName" />
 
-        <TextView
-            android:id="@+id/tvLike"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            android:text="@{Integer.toString(viewmodel.like)}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLabelLike"
-            app:layout_constraintStart_toEndOf="@+id/guidelineHelp"
-            tools:text="5" />
+            <TextView
+                android:id="@+id/tvLabelLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guidelineHelp"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonLike"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/like_button"
-            android:onClick="@{() -> viewmodel.onLike()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guidelineHelp"
-            app:layout_constraintTop_toBottomOf="@+id/tvLike" />
+            <TextView
+                android:id="@+id/tvLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{Integer.toString(viewmodel.like)}"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guidelineHelp"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelLike"
+                tools:text="5" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            app:hideIfZero="@{viewmodel.like}"
-            app:progressScaled="@{viewmodel.like}"
-            android:max="@{100}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/guidelineHelp"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLike"
-            tools:progressBackgroundTint="@android:color/darker_gray" />
+            <Button
+                android:id="@+id/buttonLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewmodel.onLike()}"
+                android:text="@string/like_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guidelineHelp"
+                app:layout_constraintTop_toBottomOf="@+id/tvLike" />
 
-        <TextView
-            android:id="@+id/tvLabelEmployees"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/list_of_employees"
-            android:layout_margin="8dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:max="@{100}"
+                app:hideIfZero="@{viewmodel.like}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/guidelineHelp"
+                app:layout_constraintTop_toBottomOf="@+id/buttonLike"
+                app:progressScaled="@{viewmodel.like}"
+                tools:progressBackgroundTint="@android:color/darker_gray" />
 
-        <TextView
-            android:id="@+id/tvListEmployee"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@{viewmodel.employees.listEmployees}"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLabelEmployees"
-            tools:text="list of employee"/>
+            <TextView
+                android:id="@+id/tvLabelEmployees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/list_of_employees"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
+
+            <TextView
+                android:id="@+id/tvListEmployee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@{viewmodel.employees}"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLabelEmployees"
+                tools:text="list of employee" />
+
+            <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="26dp"
+                android:contentDescription="@string/image"
+                android:img_url="@{viewmodel.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guidelineHelp"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListEmployees"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineHelp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvListEmployee" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
