@@ -22,7 +22,6 @@ fun setImage(view: ImageView, url: String){
 
 @BindingAdapter(value = ["app:progressScaled", "android:max"], requireAll = true)
 fun setProgress(progressBar: ProgressBar, likes: Int, max: Int) {
-    val n = (likes * max / 5).coerceAtMost(max)
     progressBar.progress = (likes * max / 10).coerceAtMost(max)
 }
 
